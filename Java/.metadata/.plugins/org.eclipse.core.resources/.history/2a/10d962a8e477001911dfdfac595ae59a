@@ -1,0 +1,63 @@
+package acao;
+
+import javax.swing.JOptionPane;
+
+import beans.Produto;
+import dados.Dado;
+
+public class Acao {
+
+	public static String Vale, Imposto, SalLiquido;
+
+	// Incrementa qntd
+
+	public void incrementa(String c) {
+		boolean test = true;
+
+		for (int i = 0; i < Dado.arrayProdutos.size(); i++) {
+			if (c.equals(Dado.arrayProdutos.get(i).getNome())) {
+				Dado.arrayProdutos.get(i).setQuantidade(Dado.arrayProdutos.get(i).getQuantidade() + 1);
+				test = false;
+				break;
+			}
+		}
+		if (test) {
+			Produto a = new Produto();
+			a.setNome(c);
+			a.setQuantidade(1);
+			Dado.arrayProdutos.add(a);
+		}
+
+	}
+
+	// Decrementa qntd
+
+	public int decrementa(String c) {
+		boolean test = true;
+		int qnt =0;
+
+		for (int i = 0; i < Dado.arrayProdutos.size(); i++) {
+			if ((c.equals(Dado.arrayProdutos.get(i).getNome()))) {
+				if ((Dado.arrayProdutos.get(i).getQuantidade() > 0)) {
+					Dado.arrayProdutos.get(i).setQuantidade(Dado.arrayProdutos.get(i).getQuantidade() - 1);
+					test = false;
+					break;
+				} else {
+					test = false;
+					JOptionPane.showMessageDialog(null, "Já não há nenhuma unidade deste item no carrinho");
+					break;
+				}
+			}
+		}
+		if(test) {
+			JOptionPane.showMessageDialog(null, "Já não há nenhuma unidade deste item no carrinho");
+		}
+		
+		for(int i =0; i<Dado.arrayProdutos.size();i++) {
+			qnt += Dado.arrayProdutos.get(i).getQuantidade();
+		}
+		return qnt;
+
+	}
+
+}

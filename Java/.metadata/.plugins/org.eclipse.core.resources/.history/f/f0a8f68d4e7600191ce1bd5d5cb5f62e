@@ -1,0 +1,9 @@
+package beans;
+
+public class Colaborador {
+	
+	String nome,cargo;
+	Double salBruto,salLiquido,imposto;
+	Boolean vale,saude,clube;
+
+}

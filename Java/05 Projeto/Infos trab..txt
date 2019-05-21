@@ -1,0 +1,4 @@
+Nome Completo, data de nascimento, sexo, cpf, endereço, telefone, cep
+
+fazer login adm para coletar info, imagem mudando na homepage, calendario
+preencher tela cadastro

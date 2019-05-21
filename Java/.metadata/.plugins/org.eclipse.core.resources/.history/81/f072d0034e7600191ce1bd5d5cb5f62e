@@ -1,0 +1,9 @@
+package dados;
+
+import java.util.ArrayList;
+
+public class Dado {
+	
+	public static ArrayList<Colaboradore> arrayColaboradores = new ArrayList<Colaboradore>();
+
+}

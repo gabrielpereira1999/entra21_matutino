@@ -1,0 +1,12 @@
+package dados;
+
+import java.util.ArrayList;
+
+import beans.Colaborador;
+
+public class Dado {
+	
+	public static ArrayList<Colaborador> arrayColaboradores = new ArrayList<Colaborador>();
+	public static ArrayList<QntCargos> arrayCargos = new ArrayList<QntCargos>();
+
+}

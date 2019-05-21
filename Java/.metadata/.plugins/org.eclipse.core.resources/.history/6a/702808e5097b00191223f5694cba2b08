@@ -1,0 +1,22 @@
+package banco;
+
+import java.util.ArrayList;
+
+import com.sun.tools.javac.util.List;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		//Poli > Vários
+		//Morphus > Formas
+		Cheque obj = new ChequeEspecial();
+		obj.juros(1000);
+		obj.mensagem();
+		
+		//Outro exemplo
+		List<String> lista = new ArrayList<String>();
+
+	}
+
+}

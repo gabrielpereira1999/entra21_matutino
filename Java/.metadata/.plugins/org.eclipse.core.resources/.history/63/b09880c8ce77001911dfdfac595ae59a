@@ -1,0 +1,10 @@
+package beans;
+
+public class IMC {
+	private Double Alt, Peso;
+	private String nome;
+
+	
+	
+
+}

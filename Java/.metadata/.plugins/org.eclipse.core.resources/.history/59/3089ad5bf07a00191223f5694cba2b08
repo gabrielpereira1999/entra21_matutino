@@ -1,0 +1,10 @@
+package cargos;
+
+public class Cargo {
+	
+	//Atributos
+	private String cargo;
+	private double salario;
+	
+
+}

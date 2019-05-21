@@ -1,0 +1,4 @@
+Object[] options1 = {"Santa Catarina", "Rio Grande do Sul", "Paraná"};
+
+JOptionPane.showOptionDialog(null,"Escolha um estado",
+	"Estados",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE,null,options1,options1[0]);

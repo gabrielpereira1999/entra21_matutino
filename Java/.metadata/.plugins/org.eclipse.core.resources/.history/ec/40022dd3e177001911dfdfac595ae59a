@@ -1,0 +1,26 @@
+package acao;
+
+import javax.swing.table.DefaultTableModel;
+
+import beans.Produto;
+import dados.Dado;
+
+public class Acao {
+	
+	public static String Vale, Imposto, SalLiquido;
+
+	// Incrementa qntd
+	public void incrementa(String c) {
+
+		//Verifica produto
+		if (c.equals("Carro Vermelho")) {
+			
+		}
+		
+
+		//Dado.arrayColaboradores.add(c);
+
+	}
+
+
+}

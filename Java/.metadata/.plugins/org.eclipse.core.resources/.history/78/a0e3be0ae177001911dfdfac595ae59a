@@ -1,0 +1,70 @@
+package beans;
+
+public class Produto {
+	private int qCVermelho, qCVerde, qCAmarelo, qCAzul, qMVermelha, qMAzul, qMVerde, qMAmarela;
+
+	public int getqCVermelho() {
+		return qCVermelho;
+	}
+
+	public void setqCVermelho(int qCVermelho) {
+		this.qCVermelho = qCVermelho;
+	}
+
+	public int getqCVerde() {
+		return qCVerde;
+	}
+
+	public void setqCVerde(int qCVerde) {
+		this.qCVerde = qCVerde;
+	}
+
+	public int getqCAmarelo() {
+		return qCAmarelo;
+	}
+
+	public void setqCAmarelo(int qCAmarelo) {
+		this.qCAmarelo = qCAmarelo;
+	}
+
+	public int getqCAzul() {
+		return qCAzul;
+	}
+
+	public void setqCAzul(int qCAzul) {
+		this.qCAzul = qCAzul;
+	}
+
+	public int getqMVermelha() {
+		return qMVermelha;
+	}
+
+	public void setqMVermelha(int qMVermelha) {
+		this.qMVermelha = qMVermelha;
+	}
+
+	public int getqMAzul() {
+		return qMAzul;
+	}
+
+	public void setqMAzul(int qMAzul) {
+		this.qMAzul = qMAzul;
+	}
+
+	public int getqMVerde() {
+		return qMVerde;
+	}
+
+	public void setqMVerde(int qMVerde) {
+		this.qMVerde = qMVerde;
+	}
+
+	public int getqMAmarela() {
+		return qMAmarela;
+	}
+
+	public void setqMAmarela(int qMAmarela) {
+		this.qMAmarela = qMAmarela;
+	}
+
+}

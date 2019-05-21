@@ -1,0 +1,169 @@
+package formularios;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import acao.Acao;
+import beans.Colaborador;
+
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JSpinner;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+@SuppressWarnings("serial")
+public class Formulario extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+	private JTextField txtColaborador;
+	private JTextField txtSalBruto;
+	private JTextField txtVale;
+	private JTextField txtImposto;
+	private JTextField txtSalLiquido;
+
+	public Formulario() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 582, 344);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 155, 539, 139);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JLabel lblColaborador = new JLabel("Colaborador");
+		lblColaborador.setBounds(10, 11, 87, 14);
+		contentPane.add(lblColaborador);
+		
+		JLabel lblSalrioBruto = new JLabel("Sal\u00E1rio Bruto");
+		lblSalrioBruto.setBounds(10, 36, 87, 14);
+		contentPane.add(lblSalrioBruto);
+		
+		JLabel lblValeTransporte = new JLabel("Vale Transporte");
+		lblValeTransporte.setBounds(10, 61, 99, 14);
+		contentPane.add(lblValeTransporte);
+		
+		JLabel lblFaltasNosMs = new JLabel("Faltas nos m\u00EAs");
+		lblFaltasNosMs.setBounds(10, 86, 87, 14);
+		contentPane.add(lblFaltasNosMs);
+		
+		txtColaborador = new JTextField();
+		txtColaborador.setBounds(118, 8, 170, 20);
+		contentPane.add(txtColaborador);
+		txtColaborador.setColumns(10);
+		
+		txtSalBruto = new JTextField();
+		txtSalBruto.setEnabled(false);
+		txtSalBruto.setBounds(118, 33, 170, 20);
+		contentPane.add(txtSalBruto);
+		txtSalBruto.setColumns(10);
+		
+		JCheckBox chkboxVale = new JCheckBox("");
+		chkboxVale.setBounds(116, 55, 21, 23);
+		contentPane.add(chkboxVale);
+		
+		txtVale = new JTextField();
+		txtVale.setEnabled(false);
+		txtVale.setBounds(143, 58, 145, 20);
+		contentPane.add(txtVale);
+		txtVale.setColumns(10);
+		
+		JSpinner spinnerFaltas = new JSpinner();
+		spinnerFaltas.setBounds(118, 83, 49, 20);
+		contentPane.add(spinnerFaltas);
+		
+		JLabel lblCargo = new JLabel("Cargo");
+		lblCargo.setBounds(298, 11, 61, 14);
+		contentPane.add(lblCargo);
+		
+		JComboBox<String> comboCargo = new JComboBox<String>();
+		comboCargo.setBounds(369, 7, 170, 22);
+		comboCargo.addItem("Estagiário");
+		comboCargo.addItem("Desenvolvedor Jr");
+		comboCargo.addItem("Desenvolvedor Pleno");
+		comboCargo.addItem("Desenvolvedor Sênior");
+		comboCargo.addItem("Analista de Sistemas Jr");
+		comboCargo.addItem("Analista de Sistemas Pleno");
+		comboCargo.addItem("Analista de Sistemas Sênior");
+		comboCargo.addItem("Arquiteto de Software");
+		contentPane.add(comboCargo);
+		
+		JCheckBox chkboxClube = new JCheckBox("Clube Fidelidade");
+		chkboxClube.setBounds(298, 32, 126, 23);
+		contentPane.add(chkboxClube);
+		
+		JCheckBox chkboxSaude = new JCheckBox("Plano de Sa\u00FAde");
+		chkboxSaude.setBounds(429, 32, 112, 23);
+		contentPane.add(chkboxSaude);
+		
+		JLabel lblImpostoDeRenda = new JLabel("Imposto de renda");
+		lblImpostoDeRenda.setBounds(298, 61, 110, 14);
+		contentPane.add(lblImpostoDeRenda);
+		
+		txtImposto = new JTextField();
+		txtImposto.setEnabled(false);
+		txtImposto.setBounds(418, 58, 131, 20);
+		contentPane.add(txtImposto);
+		txtImposto.setColumns(10);
+		
+		txtSalLiquido = new JTextField();
+		txtSalLiquido.setEnabled(false);
+		txtSalLiquido.setBounds(418, 86, 131, 20);
+		contentPane.add(txtSalLiquido);
+		txtSalLiquido.setColumns(10);
+		
+		JLabel lblSalrioLquido = new JLabel("Sal\u00E1rio L\u00EDquido");
+		lblSalrioLquido.setBounds(298, 86, 110, 14);
+		contentPane.add(lblSalrioLquido);
+		
+		JButton btnCadastrarColaborador = new JButton("Cadastrar Colaborador");
+		btnCadastrarColaborador.setBounds(109, 128, 157, 23);
+		contentPane.add(btnCadastrarColaborador);
+		
+		JButton btnEstatsticas = new JButton("Estat\u00EDsticas");
+		btnEstatsticas.setBounds(315, 128, 103, 23);
+		contentPane.add(btnEstatsticas);
+		
+		Acao a = new Acao();
+		
+		btnCadastrarColaborador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Colaborador c = new Colaborador();
+				c.setNome(txtColaborador.getText());
+				c.setCargo(comboCargo.getSelectedItem().toString());
+				c.setVale(chkboxVale.isSelected());
+				c.setSaude(chkboxSaude.isSelected());
+				c.setClube(chkboxClube.isSelected());
+				c.setFalta(Integer.parseInt(spinnerFaltas.getValue().toString()));
+				//Calcula
+				a.calcular(c);
+				//Faz estatísticas
+				
+				
+				//Atualiza a tabela
+				table.setModel(a.atualiza());
+			}
+		});
+		
+		comboCargo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		
+	}
+}

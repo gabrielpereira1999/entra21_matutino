@@ -1,0 +1,15 @@
+package cargos;
+
+public class Cargo {
+	
+	//Atributos
+	protected String cargo;
+	protected double salario;
+	protected int nivel;
+	
+	//Vale transporte
+	public void vt() {
+		
+	}
+
+}

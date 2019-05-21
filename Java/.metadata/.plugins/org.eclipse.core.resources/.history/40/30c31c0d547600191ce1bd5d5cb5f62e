@@ -1,0 +1,70 @@
+package dados;
+
+public class QntCargos {
+	private int est, desJr, desPl, desSe, anaJr, anaPl, anaSe, arq;
+
+	public int getEst() {
+		return est;
+	}
+
+	public void setEst(int est) {
+		this.est = est;
+	}
+
+	public int getDesJr() {
+		return desJr;
+	}
+
+	public void setDesJr(int desJr) {
+		this.desJr = desJr;
+	}
+
+	public int getDesPl() {
+		return desPl;
+	}
+
+	public void setDesPl(int desPl) {
+		this.desPl = desPl;
+	}
+
+	public int getDesSe() {
+		return desSe;
+	}
+
+	public void setDesSe(int desSe) {
+		this.desSe = desSe;
+	}
+
+	public int getAnaJr() {
+		return anaJr;
+	}
+
+	public void setAnaJr(int anaJr) {
+		this.anaJr = anaJr;
+	}
+
+	public int getAnaPl() {
+		return anaPl;
+	}
+
+	public void setAnaPl(int anaPl) {
+		this.anaPl = anaPl;
+	}
+
+	public int getAnaSe() {
+		return anaSe;
+	}
+
+	public void setAnaSe(int anaSe) {
+		this.anaSe = anaSe;
+	}
+
+	public int getArq() {
+		return arq;
+	}
+
+	public void setArq(int arq) {
+		this.arq = arq;
+	}
+
+}

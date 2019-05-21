@@ -1,0 +1,48 @@
+package acao;
+
+import javax.swing.table.DefaultTableModel;
+
+import beans.IMC;
+import dado.Pessoas;
+
+public class Acao {
+	
+	public static int Abaixo=0,Normal=0,Sobre=0,Obe1=0,Obe2=0,Obe3=0;
+
+	// Validar repeticao
+	public boolean validar(IMC c) {
+
+		for (int i = 0; i < Pessoas.arrayIMC.size(); i++) {
+			if ((Pessoas.arrayIMC.get(i).getNome().contentEquals(c.getNome()))) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	// Cadastrar
+	public void cadastrar(IMC c) {
+
+		Pessoas.arrayIMC.add(c);
+
+	}
+	
+	//Selecionar
+		public DefaultTableModel selecionar() {
+			DefaultTableModel modelo = new DefaultTableModel();
+			modelo.addColumn("Nome");
+			modelo.addColumn("Idade");
+			modelo.addColumn("IMC");
+			
+			for(int i = 0;i<Pessoas.arrayIMC.size();i++) {
+				modelo.addRow(new Object[] {
+						Pessoas.arrayIMC.get(i).getNome(),
+						Pessoas.arrayIMC.get(i).getIdade(),
+						Pessoas.arrayIMC.get(i).getIMC(),
+				});
+			}
+			return modelo;
+		}
+
+}

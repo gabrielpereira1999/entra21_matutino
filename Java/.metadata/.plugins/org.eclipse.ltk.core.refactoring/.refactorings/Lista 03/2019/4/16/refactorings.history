@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;exerc05&apos; to &apos;exerc06&apos;&#x0D;&#x0A;- Original project: &apos;Lista 03&apos;&#x0D;&#x0A;- Original element: &apos;Lista 03/src/exerc05&apos;&#x0D;&#x0A;- Renamed element: &apos;Lista 03/src/exerc06&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;exerc05&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;exerc05" name="exerc06" qualified="false" references="true" stamp="1555412226334" textual="false" version="1.0"/>
+</session>

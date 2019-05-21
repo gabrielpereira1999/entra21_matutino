@@ -1,0 +1,9 @@
+package padrao;
+
+public abstract class Padrao {
+	
+	//Métodos padrões
+	public abstract void cadastrar();
+	}
+
+}

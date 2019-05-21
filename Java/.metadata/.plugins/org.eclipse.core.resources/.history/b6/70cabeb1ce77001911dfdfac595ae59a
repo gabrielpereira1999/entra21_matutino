@@ -1,0 +1,27 @@
+package beans;
+
+public class IMC {
+	private Double Alt, Seso;
+	private String nome;
+	public Double getAlt() {
+		return alt;
+	}
+	public void setAlt(Double alt) {
+		this.alt = alt;
+	}
+	public Double getPeso() {
+		return peso;
+	}
+	public void setPeso(Double peso) {
+		this.peso = peso;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	
+
+}

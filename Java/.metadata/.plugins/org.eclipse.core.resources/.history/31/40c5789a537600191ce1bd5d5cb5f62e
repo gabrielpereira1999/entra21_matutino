@@ -1,0 +1,78 @@
+package acao;
+
+import javax.swing.table.DefaultTableModel;
+
+import beans.Colaborador;
+import dados.Dado;
+import dados.QntCargos;
+
+public class Acao {
+
+	// Cadastrar
+	public void cadastrar(Colaborador c) {
+
+		Double salBruto = 0.0, salLiquido;
+		//Verifica Cargo e incrementa o contador para estatística
+		if (c.getCargo().equals("Estagiário")) {
+			salBruto = 900.0;
+			c.setImposto(0.0);
+			QntCargos.
+		} else if (c.getCargo().equals("Desenvolvedor Jr")) {
+			salBruto = 1300.0;
+			c.setImposto(0.04);
+		} else if (c.getCargo().equals("Desenvolvedor Pleno")) {
+			salBruto = 1800.0;
+			c.setImposto(0.055);
+		} else if (c.getCargo().equals("Desenvolvedor Sênior")) {
+			salBruto = 2400.0;
+			c.setImposto(0.06);
+		} else if (c.getCargo().equals("Analista de Sistemas Jr")) {
+			salBruto = 2700.0;
+			c.setImposto(0.065);
+		} else if (c.getCargo().equals("Analista de Sistemas Pleno")) {
+			salBruto = 3200.0;
+			c.setImposto(0.07);
+		} else if (c.getCargo().equals("Analista de Sistemas Sênior")) {
+			salBruto = 3600.0;
+			c.setImposto(0.075);
+		} else if (c.getCargo().equals("Arquiteto de Software")) {
+			salBruto = 4400.0;
+			c.setImposto(0.08);
+		}
+		c.setSalBruto(salBruto - (salBruto * c.getImposto()));
+		if (c.getVale()) {
+			c.setSalBruto(c.getSalBruto() - (salBruto * 0.06));
+		}
+		salLiquido = c.getSalBruto();
+		if (c.getSaude()) {
+			salLiquido *= 0.97;
+		}
+		if (c.getClube()) {
+			c.setSalLiquido(salLiquido - 100);
+		} else {
+			c.setSalLiquido(salLiquido);
+		}
+		if (c.getFalta() == 0) {
+			c.setSalLiquido(c.getSalLiquido() + 50);
+		}
+
+		Dado.arrayColaboradores.add(c);
+
+	}
+
+	// Retorna TableModel
+	public DefaultTableModel atualiza() {
+		DefaultTableModel modelo = new DefaultTableModel();
+		modelo.addColumn("Colaborador");
+		modelo.addColumn("Salário Líquido");
+
+		for (int i = 0; i < Dado.arrayColaboradores.size(); i++) {
+			modelo.addRow(new Object[] { Dado.arrayColaboradores.get(i).getNome(),
+					Dado.arrayColaboradores.get(i).getSalLiquido(), });
+		}
+		return modelo;
+	}
+	
+	
+
+}
