@@ -1,6 +1,0 @@
-package beans;
-
-public class QntCargos {
-	private int est, desJr, desPl, desSe, anaJr, anaPl, anaSe, arq;
-
-}
