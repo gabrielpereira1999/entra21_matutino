@@ -1,0 +1,107 @@
+Criar base de dados:
+CREATE DATABASE proway
+
+Criar tabela:
+CREATE TABLE cursos(
+     idCurso INT AUTO_INCREMENT,
+     nomeCurso VARCHAR(30) NOT NULL,
+     valorCurso DOUBLE,
+     PRIMARY KEY(idCurso)
+)
+
+Inserir dados:
+INSERT INTO cursos VALUES (NULL, "Java Android", 3200)
+
+INSERT INTO cursos (nomeCurso, valorCurso) VALUES ("C# Fundamentos", 1850)
+
+INSERT INTO cursos (nomeCurso, valorCurso) VALUES ("C# .NET", 2300), 
+                                                  ("Xamarin", 2800), 
+                                                  ("PHP Básico", 700), 
+                                                  ("PHP Avançado", 1100), 
+                                                  ("Slim Framework PHP", 1600)
+
+
+Selecionar todas as colunas
+SELECT * FROM cursos
+
+Selecionar colunas específicas
+SELECT nomeCurso FROM cursos
+
+Definir nomes temporários
+SELECT nomeCurso AS "curso" FROM cursos
+
+Contar linhas
+SELECT COUNT(*) FROM cursos
+
+Concatenar dados
+SELECT CONCAT("Quantidade de registros ",COUNT(*)) FROM cursos
+
+Somar valores
+SELECT SUM(valorCurso) FROM cursos
+
+Média de valores
+SELECT AVG(valorCurso) FROM cursos
+
+Formatar valores
+SELECT FORMAT(AVG(valorCurso),2) FROM cursos
+
+Data e hora
+SELECT NOW() FROM cursos LIMIT 1
+
+Formatando data e hora
+SELECT 
+     DATE_FORMAT(NOW(),"%d/%m/%Y") as "Data",
+     DATE_FORMAT(NOW(),"%h:%i") as "Hora"
+FROM cursos LIMIT 1
+
+Comando WHERE com operadores relacionais
+/*
+>  Maior
+<  Menor
+>= Maior ou igual
+<= Menor ou igual
+=  Igual
+<> Diferente
+*/
+SELECT * FROM cursos WHERE valorCurso > 2000
+
+
+Comando WHERE com operadores lógicos
+/*
+AND  E
+OR   OU
+*/
+SELECT * FROM cursos WHERE valorCurso > 2000 AND idCurso >= 5
+
+
+Termos que contenham
+SELECT nomeCurso FROM cursos
+WHERE nomeCurso LIKE "%e%"
+
+
+Agrupar dados
+SELECT COUNT(*),segmentoCurso FROM cursos
+GROUP BY segmentoCurso
+
+Selecionar valores nulos
+SELECT * FROM cursos WHERE segmentoCurso IS NULL
+
+
+Alterar dados
+UPDATE cursos SET nomeCurso = "Zend Framework PHP"
+WHERE idCurso = 9
+
+
+Remover dados
+DELETE FROM cursos WHERE idCurso > 4
+
+
+
+
+
+
+
+
+
+
+
